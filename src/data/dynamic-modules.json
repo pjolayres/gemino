@@ -4,6 +4,8 @@
     "ContentTypes": [{
         "Name": "TestContent",
         "FullName": "DynamicModule.Namespace.TestModule",
+        "HasChildren": true,
+        "ChildrenCount": 10,
         "Fields": [{
             "Name": "Field1",
             "Type": "string"
