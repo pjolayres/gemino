@@ -1,0 +1,17 @@
+#################  
+## npm
+#################
+
+.DS_Store
+*/.DS_Store
+**/*/.DS_Store
+dist/
+output/
+npm-debug.log
+debug.log
+node_modules/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

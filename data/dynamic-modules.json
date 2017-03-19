@@ -1,0 +1,20 @@
+[{
+    "Name": "TestModule",
+    "FullName": "DynamicModule.Namespace.TestModule",
+    "ContentTypes": [{
+        "Name": "TestContent",
+        "FullName": "DynamicModule.Namespace.TestModule",
+        "Fields": [{
+            "Name": "Field1",
+            "Type": "string"
+        },
+        {
+            "Name": "Field2",
+            "Type": "decimal"
+        },
+        {
+            "Name": "Field3",
+            "Type": "int"
+        }]
+    }]
+}]
