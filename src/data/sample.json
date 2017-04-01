@@ -1,0 +1,124 @@
+{
+    "Entities": [{
+        "Name": "Parents",
+        "Namespace": "Namespace",
+        "FullName": "Namespace.Parents",
+        "Types": [{
+            "Name": "Parent",
+            "FullName": "Namespace.ParentTypes.Parent",
+            "Properties": [{
+                "Name": "ParentId",
+                "Type": "Guid"
+            }, {
+                "Name": "Field1",
+                "Type": "string"
+            }, {
+                "Name": "Field2",
+                "Type": "decimal"
+            }, {
+                "Name": "Field3",
+                "Type": "int"
+            }, {
+                "Name": "Field4",
+                "Type": "bool"
+            }]
+        }]
+    }, {
+        "Name": "Children",
+        "Namespace": "Namespace",
+        "FullName": "Namespace.Children",
+        "Types": [{
+            "Name": "Child",
+            "FullName": "Namespace.Children.Child",
+            "Properties": [{
+                "Name": "ChildId",
+                "Type": "Guid"
+            }, {
+                "Name": "ParentId1",
+                "Type": "Guid"
+            }, {
+                "Name": "ParentId2",
+                "Type": "Guid"
+            }, {
+                "Name": "Field1",
+                "Type": "string"
+            }, {
+                "Name": "Field2",
+                "Type": "decimal"
+            }, {
+                "Name": "Field3",
+                "Type": "int"
+            }, {
+                "Name": "Field4",
+                "Type": "bool"
+            }]
+        }]
+    }, {
+        "Name": "SelfReferencingItems",
+        "Namespace": "Namespace",
+        "FullName": "Namespace.SelfReferencingItems",
+        "Types": [{
+            "Name": "SelfReferencingItem",
+            "FullName": "Namespace.SelfReferencingItems.SelfReferencingItem",
+            "Properties": [{
+                "Name": "SelfReferencingItemId",
+                "Type": "Guid"
+            }, {
+                "Name": "ItemId",
+                "Type": "Guid"
+            }, {
+                "Name": "Field1",
+                "Type": "string"
+            }, {
+                "Name": "Field2",
+                "Type": "decimal"
+            }, {
+                "Name": "Field3",
+                "Type": "int"
+            }, {
+                "Name": "Field4",
+                "Type": "bool"
+            }]
+        }]
+    }, {
+        "Name": "IndependentItems",
+        "Namespace": "Namespace",
+        "FullName": "Namespace.IndependentItems",
+        "Types": [{
+            "Name": "IndependentItem",
+            "FullName": "Namespace.IndependentItems.IndependentItem",
+            "Properties": [{
+                "Name": "IndependentItemId",
+                "Type": "Guid"
+            }, {
+                "Name": "Field1",
+                "Type": "string"
+            }, {
+                "Name": "Field2",
+                "Type": "decimal"
+            }, {
+                "Name": "Field3",
+                "Type": "int"
+            }, {
+                "Name": "Field4",
+                "Type": "bool"
+            }]
+        }]
+    }],
+    "Relationships": [{
+        "ParentEntityType": "Namespace.ParentTypes.Parent",
+        "ParentChildrenProperty": "Children1",
+        "ChildEntityType": "Namespace.Children.Child",
+        "ParentReferenceProperty": "Parent1"
+    }, {
+        "ParentEntityType": "Namespace.ParentTypes.Parent",
+        "ParentChildrenProperty": "Children2",
+        "ChildEntityType": "Namespace.Children.Child",
+        "ParentReferenceProperty": "Parent2"
+    }, {
+        "ParentEntityType": "Namespace.SelfReferencingItems.SelfReferencingItem",
+        "ParentChildrenProperty": "Children",
+        "ChildEntityType": "Namespace.SelfReferencingItems.SelfReferencingItem",
+        "ParentReferenceProperty": "Parent"
+    }]
+}

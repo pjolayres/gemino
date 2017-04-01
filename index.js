@@ -1,1 +1,1 @@
-require('./src/templates/models')();
+require('./src/templates/sample')();
