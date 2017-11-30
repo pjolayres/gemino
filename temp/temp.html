@@ -1,0 +1,167 @@
+
+
+<!-- Templates.html -->
+<script id="Template1" type="text/template">…</script>
+<script id="Template2" type="text/template">…</script>
+…
+<script id="TemplateN" type="text/template">…</script>
+
+
+<!-- Component.html -->
+<div class="component">
+  …      
+  <div class="component-templates" style="display: none;">
+      <template class="component-someTemplate1">…</template>
+      <template class="component-someTemplate2">…</template>
+      ….
+      <template class="component-someTemplateN">…</template>
+  </div>
+</div>
+
+
+
+
+
+<header>
+   <div class=”heroBanner”>
+       <div class=”heroBanner-image” 
+            style=”background-image: url(...);>
+       </div>
+       ...
+   </div>
+</header>
+
+<!-- Avoid -->
+<body class="about-us">...</body>
+<body class="news">...</body>
+<body class="media-gallery">...</body>
+
+<!-- Recommended -->
+<body>
+    <main>
+        <div class="heroBanner">...</div>
+        ...
+        <div class="newsList">...</div>
+        ...
+        <div class="imageGallery">...</div>
+    <main>
+</body>
+<body>
+    <main class="homepage">...</main>
+</body>
+<body>
+    <main class="innerPage">...</main>
+</body>
+
+
+<!-- ///////////////////// -->
+
+<!-- Resources defined in html from RESX files -->
+<script>
+    window.Resources.Labels = {
+        Event_ReadMore: 'اقرأ المزيد',
+        Events_EmptyResults: 'لا يوجد أي فعاليات',
+        Events_More: 'المزيد',
+        Filters_Emirate: 'الإمارة',
+        Filters_StartDate: 'تاريخ بداية الفعالية',
+        Filters_Organizer: 'الجهة المنظمة',
+        Filters_TargetAudience: 'الفئة المستهدفة'
+    };
+</script>
+
+<!-- Hidden fields with localization values -->
+<input type="hidden" name="Event_ReadMore" value="اقرأ المزيد" />
+<input type="hidden" name="Events_EmptyResults" value="اقرأ المزيد" />
+<input type="hidden" name="Events_More" value="اقرأ المزيد" />
+<input type="hidden" name="Filters_Emirate" value="اقرأ المزيد" />
+
+
+
+
+<!-- /////////////////// -->
+
+
+<div class="sf-fieldWrp" data-sf-role="text-field-container">
+    <label for="Textbox-8">Subject</label>
+    <input id="Textbox-8" 
+           data-sf-role="text-field-input" 
+           type="text" 
+           name="Subject" 
+           value="" 
+           required="required">
+</div>
+
+
+
+<!-- ///////////////////////// -->
+
+<table>
+  <tbody>
+      <tr>
+          <td>...</td>
+          ...
+      </tr>
+      ...
+  </tbody>
+</table>
+
+
+
+<!-- ///////////////////// -->
+
+<!-- Avoid -->
+<header>
+  <div class="heroBanner heroBanner-aboutUs">
+      <div class="heroBanner-image"></div>
+      ...
+  </div>
+</header>
+
+
+<!-- Recommended -->
+<header>
+  <div class="heroBanner">
+      <div class="heroBanner-image">
+          <img src="..." />
+      </div>
+      ...
+  </div>
+</header>
+
+
+<!-- Recommended -->
+<header>
+  <div class="heroBanner">
+      <div class="heroBanner-image"
+           style="background-image: url(...);">
+      </div>
+      ...
+  </div>
+</header>
+
+
+<!-- ///////////////////// -->
+
+<div class="sf-fieldWrp" data-sf-role="text-field-container">
+    <label for="Textbox-8">Subject</label>
+    <input id="Textbox-8"
+          data-sf-role="text-field-input"
+          type="text"
+          name="Subject"
+          value=""
+          required="required"/>
+</div>
+
+<!-- /////////////////////////////// -->
+
+<div class="notificationPopup">
+    <div class="notificationPopup-header">
+        ...
+    </div>
+    <div class="notificationPopup-body">
+        ...
+    </div>
+    <div class="notificationPopup-footer">
+        <a class="notificationPopup-closeButton">Close</a>
+    </div>
+</div>
