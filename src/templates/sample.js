@@ -4,6 +4,8 @@ var utilities = require.main.require('./src/common/utilities');
 var data = require('../data/sample.json');
 var outputDirectory = path.join('dist', 'sample');
 
+var newline = os.EOL;
+
 module.exports = function () {
 
     data.Entities.forEach(entity => {
@@ -35,8 +37,8 @@ namespace ${entity.Namespace}
     {
         ${
             //Enumerates a collection and maps into an array of template literals which is later on joined into one string
-            entityType.Properties.map(property => `public ${property.Type} ${property.Name} { get; set; }`).join('\n        \n        ')
-
+            entityType.Properties.map(property => `public ${property.Type} ${property.Name} { get; set; }`
+            ).join(`${newline}${newline}        `)
         }
 
         ${
@@ -44,31 +46,31 @@ namespace ${entity.Namespace}
             //utilities.renderOptional() is used whenever a section can be empty and must not take up any lines or whitespace when it is empty. An optional suffix can be provided when the content is not empty.
             utilities.renderOptional(() => {
                 var parentRelationships = data.Relationships.filter(x => x.ChildEntityType === entityType.FullName);
-                
+
                 return parentRelationships.map(parentRelationship => {
                     var parentEntityType = utilities.selectMany(data.Entities, x => x.Types).find(x => x.FullName === parentRelationship.ParentEntityType);
 
                     return `public ${parentEntityType.Name} ${parentRelationship.ParentReferenceProperty} { get; set; }`;
-                }).join('\n        \n        ')
-            }, '\n\n        ')
-            
-        }${
+                }).join('\n\n')
+            }, `${newline}${newline}        `)
+
+            }${
             //If following an optional section, the next string or expression segment must start right after the previous one ended to avoid rendering unnecessary whitespace and line breaks.
 
             utilities.renderOptional(() => {
 
                 return childrenMetadata.map(x => `public IEnumerable<${x.entityType.Name}> ${x.relationship.ParentChildrenProperty} { get; set; }`).join('\n        \n        ')
 
-            }, '\n\n        ')
+            }, `${newline}${newline}        `)
 
-        }public ${entityType.Name}()
+            }public ${entityType.Name}()
         {
             ${childrenMetadata.length > 0 //This is an example of a conditional block.
-            ?
+                ?
                 childrenMetadata.map(x => {
                     return `this.${x.relationship.ParentChildrenProperty} = new List<${x.entityType.Name}>();`;
                 }).join('\n            ')
-            :
+                :
                 '//TODO: Initialize children'
             }
         }
